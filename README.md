@@ -2,9 +2,11 @@ REQUISITOS:
 
     docker
     docker-compose
+    npm
+    nvm
 
 
-INSTRUÇÔES:
+INSTRUÇÔES de comandos:
 
     copiar arquivo .env.example para .env
 
@@ -34,7 +36,9 @@ INSTRUÇÔES:
 
     docker-compose restart
 
-    docker-compose exec web bash
+    npm install
+
+    npm install vue@next vue-router@4 @vitejs/plugin-vue
 
 
 TESTES unitários:
