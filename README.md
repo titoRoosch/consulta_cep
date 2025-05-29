@@ -1,46 +1,109 @@
-REQUISITOS:
+# 🧾 Consulta CEP - Laravel + Vue
 
-    docker
-    docker-compose
-    npm
-    nvm
+Aplicação full-stack utilizando **Laravel** no backend e **Vue 3** com **Vite** no frontend. Permite consultar endereços a partir de um CEP, utilizando a API ViaCEP.
 
+---
 
-INSTRUÇÔES de comandos:
+## ✅ Requisitos
 
-    copiar arquivo .env.example para .env
+Antes de iniciar, certifique-se de ter os seguintes softwares instalados:
 
-    docker-compose build
+- [Docker](https://www.docker.com/)
+- [Docker Compose](https://docs.docker.com/compose/)
+- [NVM (Node Version Manager)](https://github.com/nvm-sh/nvm)
+- [NPM (Node Package Manager)](https://www.npmjs.com/)
 
-    docker-compose up -d
+---
 
-    docker-compose exec web bash
+## ⚙️ Passo a passo para executar o projeto
 
-    composer install
+### 1. Clone o repositório
 
-    php artisan key:generate
+```bash
+git clone https://github.com/seu-usuario/seu-repositorio.git
+cd seu-repositorio
+```
 
-    chmod -R 775 storage/logs
-    chown -R www-data:www-data storage/logs
+### 2. Configure o ambiente
 
-    chmod -R 775 storage/framework/sessions
-    chown -R www-data:www-data storage/framework/sessions
+```bash
+cp .env.example .env
+```
 
-    chmod -R 775 storage/framework/views
-    chown -R www-data:www-data storage/framework/views
+### 3. Construa e inicie os containers
 
-    php artisan config:clear
-    php artisan cache:clear
+```bash
+docker-compose build
+docker-compose up -d
+```
 
-    exit
+### 4. Acesse o container e instale dependências do Laravel
 
-    docker-compose restart
+```bash
+docker-compose exec web bash
 
-    npm install
+composer install
+php artisan key:generate
+```
 
-    npm install vue@next vue-router@4 @vitejs/plugin-vue
+### 5. Configure permissões
 
+```bash
+chmod -R 775 storage/logs
+chown -R www-data:www-data storage/logs
 
-TESTES unitários:
+chmod -R 775 storage/framework/sessions
+chown -R www-data:www-data storage/framework/sessions
 
-    docker-compose run --rm web vendor/bin/phpunit
+chmod -R 775 storage/framework/views
+chown -R www-data:www-data storage/framework/views
+```
+
+### 6. Limpe o cache de configuração
+
+```bash
+php artisan config:clear
+php artisan cache:clear
+exit
+```
+
+### 7. Reinicie os containers
+
+```bash
+docker-compose restart
+```
+
+---
+
+## 🖥️ Instalação do Frontend (Vue 3 + Vite)
+
+```bash
+npm install
+npm install vue@next vue-router@4 @vitejs/plugin-vue
+```
+
+---
+
+## 🧪 Rodando os testes unitários
+
+```bash
+docker-compose run --rm web vendor/bin/phpunit
+```
+
+---
+
+## 📬 API Utilizada
+
+- [ViaCEP](https://viacep.com.br/) – para consulta de endereços via CEP
+
+---
+
+## 🤝 Contribuição
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar pull requests.
+
+---
+
+## 📄 Licença
+
+Este projeto está licenciado sob os termos da [MIT License](LICENSE).
