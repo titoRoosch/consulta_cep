@@ -20,8 +20,7 @@ Antes de iniciar, certifique-se de ter os seguintes softwares instalados:
 ### 1. Clone o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/seu-repositorio.git
-cd seu-repositorio
+git clone https://github.com/titoRoosch/consulta_cep.git
 ```
 
 ### 2. Configure o ambiente
