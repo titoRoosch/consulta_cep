@@ -78,7 +78,7 @@ docker-compose restart
 
 ```bash
 npm install
-npm install vue@next vue-router@4 @vitejs/plugin-vue
+npm install vue@3 vue-router@4 @vitejs/plugin-vue
 ```
 
 ---
